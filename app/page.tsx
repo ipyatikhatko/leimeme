@@ -1,6 +1,5 @@
 import { Link } from "@heroui/link";
 import { button as buttonStyles } from "@heroui/theme";
-import Image from "next/image";
 
 import { title, subtitle } from "@/components/primitives";
 
@@ -24,9 +23,9 @@ export default function Home() {
             variant: "shadow",
             size: "lg",
           })}
-          href="/collection"
+          href="/list"
         >
-          View Collection
+          View
         </Link>
         <Link
           className={buttonStyles({
@@ -34,30 +33,11 @@ export default function Home() {
             radius: "full",
             size: "lg",
           })}
-          href="/add-meme"
+          href="/table"
         >
-          Add New Meme
+          Manage
         </Link>
       </div>
-
-      <div className="relative w-full max-w-4xl mt-8 grid grid-cols-3 gap-4 p-4 rounded-xl bg-gradient-to-br from-background/60 to-background/30 backdrop-blur-sm border border-foreground/10">
-        {[1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="relative aspect-square overflow-hidden rounded-lg transform hover:scale-105 transition-transform duration-300 shadow-lg"
-          >
-            <Image
-              fill
-              alt={`Sample meme ${i}`}
-              className="object-cover"
-              priority={i === 1}
-              sizes="(max-width: 768px) 100vw, 33vw"
-              src={`/images/sample-meme-${i}.webp`}
-            />
-          </div>
-        ))}
-      </div>
-
       <div className="mt-8 text-center max-w-md">
         <p className="text-foreground/70">
           Easily manage your meme collection with our intuitive interface. Add
